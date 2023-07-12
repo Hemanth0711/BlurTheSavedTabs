@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "version": "0.1",
+    "name": "Leads tracker",
+    "background": {
+      "background.page" : ["src/background.html"]
+    },
+    
+    "content_scripts": [ {
+      "matches": ["http://*/*"],
+      "css":["index.css"],
+      "js": ["index.js"],
+      "run_at": "document_start"
+    } ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    },
+    "host_permissions": [
+      "*://*/*"
+    ],
+    "permissions": [
+      "scripting",
+      "activeTab"
+    ]
+}
